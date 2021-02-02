@@ -1,0 +1,23 @@
+<div class="container" style="width: 70%;">
+    <br>
+    <div style="text-align: center;">
+        <h3>All Review of {{DocName}}</h3>
+    </div>
+    <br>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th colspan="2"><b>S.No.</b></th>
+                <th><b>Reviews</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of AllDocReview; let i=index;">
+                <td colspan="2">{{i+1}}</td>
+                <td>{{item.aboutDoctor}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

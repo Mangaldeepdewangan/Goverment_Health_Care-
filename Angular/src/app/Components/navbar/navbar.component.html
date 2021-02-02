@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-dark  text-light" style="background-color: #170061;">
+    <a class="navbar-brand" href="#"><img src="../../../assets/logo.png" style="width: 45px; height: 45px;" alt="">HealthCare</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active"></li>
+
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/patient/login']">Patient<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active"></li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Doctor<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active"></li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="">Admin<span class="sr-only">(current)</span></a>
+            </li>
+
+        </ul>
+        <div class="row">
+            <div class="col" *ngIf="false">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle> <img src="../../../assets/recep.png" style="height: 30px; width: 30px; border-radius: 30px;" alt=""> &nbsp; Receptionist </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>Action - 1</button>
+                        <button ngbDropdownItem>Another Action</button>
+                        <button ngbDropdownItem>Something else is here</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div class="row" *ngIf="false">
+            <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle> <img src="../../../assets/Admin_user.png" style="height: 30px; width: 30px; border-radius: 30px;" alt=""> &nbsp; Admin </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>Profile</button>
+                        <button ngbDropdownItem>Book Appointment</button>
+                        <button ngbDropdownItem>Prev Appointment</button>
+                        <button ngbDropdownItem>Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div class="row">
+            <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle> <img src="../../../assets/User_icon.png" style="height: 30px; width: 30px; border-radius: 30px;" alt=""> &nbsp; Mangaldeep </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>Profile</button>
+                        <button ngbDropdownItem>Today Appointment</button>
+                        <button ngbDropdownItem>All Appointments</button>
+                        <button ngbDropdownItem (click)="logout()">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div class="row" *ngIf="false">
+            <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle> <img src="../../../assets/doc_nav.jpg" style="height: 30px; width: 30px; border-radius: 30px;" alt=""> &nbsp; Admin </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem>All Hospital</button>
+                        <button ngbDropdownItem>All Appointments</button>
+                        <button ngbDropdownItem (click)="logout()">LogOut</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    </div>
+</nav>

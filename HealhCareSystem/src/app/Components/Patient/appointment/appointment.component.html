@@ -1,0 +1,59 @@
+<div class="container" style="width: 55%;">
+    <div style="text-align: center;"><img src="https://img.icons8.com/bubbles/100/000000/doctors-bag.png" /></div>
+    <br>
+    <div class="form-group">
+        <label for="my-textarea" style="color: #102e70;"> <b> <i> Chhose Date for Appointment</i></b> </label>
+        <input type="date" [(ngModel)]="Appoint.appointment_date" class="form-control" required>
+
+    </div>
+    <br>
+    <label for="my-textarea" style="color: #102e70;"> <b> <i> Choose Hospital</i></b> </label>
+    <select class="custom-select mr-sm-2 " id="inlineFormCustomSelect" (change)="department(Appoint.hos_id)" [(ngModel)]="Appoint.hos_id" required>
+        <option class="bg-light text-primary" [disabled] >Choose Hospitals</option>
+        <option *ngFor="let i of Hospitals" [value]="i.id"  >{{i.city}}</option>
+ 
+    </select>
+
+    <br>
+    <br>
+    <div class="form-group" *ngIf="departments">
+        <label for="my-textarea" style="color: #102e70;"> <b> <i> Choose Department</i></b> </label>
+        <select class="custom-select mr-sm-2 " [(ngModel)]="Appoint.doc_id" (change)="getSlot()" id="inlineFormCustomSelect" required>
+        <option class="bg-light text-primary" [disabled] >Choose Department</option>
+        <option *ngFor="let j of AllDepartments" [value]="j.doc_id"  >{{j.departName}}</option>
+    </select>
+
+    </div>
+    <br>
+
+    <div class="form-group" *ngIf="datepick">
+        <label for="my-textarea" style="color: #102e70;"> <b> <i> Choose Slot</i></b> </label>
+        <select class="custom-select mr-sm-2 " id="inlineFormCustomSelect" (change)="getProblem()" [(ngModel)]="Appoint.slot" required>
+        <option class="bg-light text-primary" disabled selected>Choose Slot</option>
+        <option *ngIf="s1" [value]="1">09:00 AM </option>
+        <option *ngIf="s2" [value]="2">09:30 AM</option>
+        <option *ngIf="s3" [value]="3">10:00 AM</option>
+        <option *ngIf="s4" [value]="4">10:30 AM</option>
+        <option *ngIf="s5" [value]="5">11:00 AM</option>
+        <option *ngIf="s6" [value]="6">11:30 AM</option>
+    </select>
+
+    </div>
+    <br>
+
+    <div class="form-group" *ngIf="problem">
+        <label for="my-textarea" style="color: #102e70;"> <b> <i> Problem</i></b> </label>
+        <textarea id="my-textarea" class="form-control" name="" [(ngModel)]="Appoint.problem" rows="3" required></textarea>
+
+    </div>
+
+    <input type="button" id="button" class="form-control btn btn-primary" name="" value="Appoint" (click)="SaveAppointment()">
+    <br>
+    <br>
+    <br>
+
+    <div>{{Appoint.appointment_date}}</div>
+    <div>{{Appoint.hos_id}}</div>
+    <div>{{Appoint.doc_id}}</div>
+    <div>{{Appoint.slot}}</div>
+</div>

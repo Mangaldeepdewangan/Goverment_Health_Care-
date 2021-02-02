@@ -1,0 +1,33 @@
+<div class="container">
+    <br>
+    <div style="text-align: center;">
+        <h2 style="color: rgb(45, 14, 119);">All Appointments of</h2>
+    </div>
+    <br>
+    <table class="table table-hover">
+        <thead class="text-light bg-dark">
+            <tr>
+                <td>S.No</td>
+                <td>Appointment Date</td>
+                <td>Problem</td>
+                <td>View Doctor</td>
+                <td>View Description</td>
+                <td>Feedback Status</td>
+                <td>Fill Feedback</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of All_Appointments ; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{item.appointment_date}}</td>
+                <td>{{item.problem}}</td>
+                <td><button class="form control btn-sm btn-outline-info" (click)="getDoc(item.doc_id)">Get Doctor Info</button></td>
+                <td><button class="form control btn-sm btn-outline-primary" (click)="viewDescription(item.doc_id)">View Description</button></td>
+                <td>{{item.feedback_Status}}</td>
+                <td><button class="form-control btn-sm btn-outline-success" (click)="fillFeed(item.a_id)">Fill Feedback</button></td>
+            </tr>
+        </tbody>
+
+
+    </table>
+</div>

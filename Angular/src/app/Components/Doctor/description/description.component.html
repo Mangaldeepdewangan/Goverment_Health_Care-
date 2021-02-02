@@ -1,0 +1,62 @@
+<div class="container" style="text-align: center; width: 50%;">
+    <br>
+    <br>
+    <b>Add Description</b>
+    <br>
+    <form #RegisterForm="ngForm" (ngSubmit)="onSubmit(medicine , dose ,qty)">
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Medicine" name="medicine" required #medicine value="">
+
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="Dose" #dose name="dose" required>
+                    </td>
+                    <td>
+                        <input type="number" max="100" min="0" class="form-control" placeholder="Qty" name="qty" #qty required>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit" style="width: 25%;" class="form-control btn btn-info">Add Medicine</button>
+
+
+        <br>
+    </form>
+    <br>
+    <div id="table" style="padding: 20px;">
+        <h3>Hello </h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>S.No.</td>
+                    <td>Medicine</td>
+                    <td>Dose</td>
+                    <td>Qty</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of Description ; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.medicine}}</td>
+                    <td>{{item.dose}}</td>
+                    <td>{{item.qty}}</td>
+                    <td><button class="form-control btn btn-danger" (click)="delete(i)">Delete</button></td>
+                </tr>
+            </tbody>
+
+
+        </table>
+    </div>
+
+    <br>
+    <br>
+
+    <input type="button" (click)="OnClick()" style="width: 50%;" class="form-control btn btn-success" value="Submit">
+
+    <br>
+</div>

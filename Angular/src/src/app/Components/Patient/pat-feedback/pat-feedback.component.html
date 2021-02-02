@@ -1,0 +1,41 @@
+<div class="container" style="width: 50%;">
+    <br>
+    <div style="text-align: center;">
+        <img src="../../../../assets/feedback.png" style="height: 250px; width: 250px;" alt="">
+
+    </div>
+    <form class="example-form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <table class="table">
+            <tr>
+                <td>
+                    <b>Doctor Rating</b> <br>
+                    <ngb-rating [max]="5" [(rate)]="feed.doc_rating" [readonly]="false"></ngb-rating>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Hospital Rating</b> <br>
+                    <ngb-rating [max]="5" [(rate)]="feed.Hos_rating" [readonly]="false"></ngb-rating>
+
+
+                </td>
+            </tr>
+        </table>
+
+        <textarea class="form-control" name="" id="" cols="30" placeholder="About Doctor" name="fname" [(ngModel)]="feed.about_doctor" value="" #fname="ngModel" [class.is-invalid]="fname.invalid && fname.touched" rows="2" required></textarea>
+        <small class="text-danger" [class.d-none]="fname.valid || fname.untouched">About Doctor  is required field</small>
+        <br>
+        <textarea class="form-control" name="" id="" cols="30" [(ngModel)]="feed.campus" placeholder="About Hospital" rows="2" name="lname" [(ngModel)]="feed.campus" #lname="ngModel" [class.is-invalid]="lname.invalid && lname.touched" required></textarea>
+        <small class="text-danger" [class.d-none]="lname.valid || lname.untouched">About Doctor  is required field</small>
+        <br>
+        <br>
+
+        <input type="button" [disabled]="loginForm.form.invalid" class="form-control btn-sm btn btn-success" value="Submit">
+        <br>
+        <br>
+
+    </form>
+
+
+</div>

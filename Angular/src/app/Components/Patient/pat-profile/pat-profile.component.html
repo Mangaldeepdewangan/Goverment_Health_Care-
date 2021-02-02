@@ -1,0 +1,50 @@
+<div class="container">
+    <br>
+    <h2 style="text-align: center;">Patient Information</h2>
+    <br>
+    <div>
+        <table class="table">
+
+            <tbody>
+                <tr>
+                    <td> <b>Name</b> </td>
+                    <td>{{Patient.fname}} &nbsp;{{Patient.lname}}
+                    </td>
+                </tr>
+                <tr>
+                    <td> <b>Email</b> </td>
+                    <td>{{Patient.username}}
+                    </td>
+                </tr>
+                <tr>
+                    <td> <b>Mobile</b> </td>
+                    <td>{{Patient.mobile}}
+                    </td>
+                </tr>
+                <tr>
+                    <td> <b>DOB</b> </td>
+                    <td>{{Patient.birthdate}}
+                    </td>
+                </tr>
+                <tr>
+                    <td> <b>Address</b> </td>
+                    <td>{{Patient.address}}
+                    </td>
+                </tr>
+                <tr>
+                    <td> <b>Pincode</b> </td>
+                    <td>{{Patient.pincode}}
+                    </td>
+                </tr>
+
+
+
+            </tbody>
+
+        </table>
+        <br>
+
+        <button type="button" class="btn btn-info" (click)="prevAppointment(Patient.p_id)">Previous Appointment</button>
+
+    </div>
+</div>

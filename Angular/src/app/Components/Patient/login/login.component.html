@@ -1,0 +1,35 @@
+<br>
+<br>
+<div class="container" style="width: 38%;">
+    <div style="text-align: center;">
+        <h2>Patient Login</h2>
+        <img src="../../../../assets/patLogin.png" style="width: 150px; height: 150px;" alt="">
+    </div>
+    <br>
+    <div>
+        <form class="example-form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+            <input type="email" class="form-control" [(ngModel)]="PatientInfo.username" required="required" name="uname" #uname="ngModel" [class.is-invalid]="uname.invalid && uname.touched" required placeholder="Username">
+            <small class=" text-danger" [class.d-none]="uname.valid || uname.untouched">Username is required field</small>
+
+            <br>
+            <input type="password" class="form-control" required="required" placeholder="Password" [(ngModel)]="PatientInfo.password" name="password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
+            <small class=" text-danger" [class.d-none]="password.valid || password.untouched">Password is required field</small>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <button type="submit" class="form-control text-light btn" [disabled]="loginForm.form.invalid" style="background-color: rgb(206, 58, 95); width: 25%;">Login</button>&nbsp;&nbsp;
+                    <button style="display: inline-block; background-color: rgb(4, 80, 180);  color: white; width: 25%;" class="form-control text-light btn" (click)="reset(loginForm)">Reset</button><br>
+                </div>
+            </div>
+            <br>
+            <div class="container" style="width: 70%;">
+                <button class="form-control text-light" style="background-color: rgb(32, 180, 39);" [routerLink]="['/patient/register']">Register Patient</button>
+            </div>
+
+
+
+        </form>
+    </div>
+</div>

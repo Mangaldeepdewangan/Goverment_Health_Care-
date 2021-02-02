@@ -1,0 +1,141 @@
+<div class="container">
+    <div class="container" style="width: 75%;">
+        <div style="text-align: center;">
+
+            <img src="https://img.icons8.com/plasticine/100/000000/add-user-male.png" />
+            <br>
+            <h4> Registration Form </h4>
+        </div>
+        <form #RegisterForm="ngForm" (ngSubmit)="onSubmit()">
+            <div style="text-align: center;">
+                <small class="text-success">{{msgsuc}}</small>
+                <small class="text-danger">{{msg}}</small>
+            </div>
+
+            <div>
+
+                <div class="form-group mt-3 ml-5 mr-5">
+                    <div class="form-group">
+                        <input type="text" style="width: 100%;" class="form-control" placeholder="First Name *" name="fname" [(ngModel)]="patient.fname" value="" #fname="ngModel" [class.is-invalid]="fname.invalid && fname.touched" required>
+                        <small class="text-danger" [class.d-none]="fname.valid || fname.untouched">First name is required field</small>
+                    </div>
+                </div>
+                <div class="form-group mt-3 ml-5 mr-5">
+                    <div class="form-group">
+                        <input type="text" style="width: 100%;" class="form-control" placeholder="Last Name *" name="lname" [(ngModel)]="patient.lname" value="" #lname="ngModel" [class.is-invalid]="lname.invalid && lname.touched" required>
+                        <small class="text-danger" [class.d-none]="lname.valid || lname.untouched">Last name is required field</small>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="form-group mt-1 ml-5 mr-5">
+                    <div class="form-group ml-1 mt-2">
+                        <div class="maxl ">
+                            <label class="radio inline "> 
+                                <input type="radio" name="gender"  [(ngModel)]="patient.gender"  value="Male "  >
+                                <span> Male </span> 
+                            </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label class="radio inline "> 
+                                <input type="radio" name="gender"  [(ngModel)]="patient.gender" value="Female ">
+                                <span> Female </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3 ml-5 mr-5">
+                    <div class="form-group ">
+                        <input class="form-control " style="width: 100%;" type="text" onfocus="(this.type='date' ) " name="DOB" onblur="(this.type='text' )" [(ngModel)]="patient.birthdate" #DOB="ngModel" placeholder="Date of Birth * " required [class.is-invalid]="DOB.invalid && DOB.touched"
+                        />
+                        <small class=" text-danger" [class.d-none]="DOB.valid || DOB.untouched">Date of Birth is required field</small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="form-group mt-3 ml-5 mr-5">
+
+                    <div class="form-group ">
+                        <input type="text" style="width: 100%;" pattern="[6-9]{1}[0-9]{9}" minlength="10" maxlength="10" name="mobile" [(ngModel)]="patient.mobile" #mobile="ngModel" class="form-control " placeholder="Your Phone * " required [class.is-invalid]="mobile.invalid && mobile.touched"
+                        />
+                        <div *ngIf="mobile.errors && (mobile.invalid && mobile.touched)">
+                            <small class="text-danger" *ngIf="mobile.errors.required">Phonenumber is required field</small>
+                            <small class="text-danger" *ngIf="mobile.errors.pattern">Enter the valid Number</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group mt-3 ml-5 mr-5">
+                <div class="form-group">
+                    <input type="password" style="width: 100%;" class="form-control" [(ngModel)]="patient.password" name="password" placeholder="Password *" required #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
+                    <small class=" text-danger" [class.d-none]="password.valid || password.untouched">Password is required field</small>
+                </div>
+
+            </div>
+
+            <div class="form-group mt-3 ml-5 mr-5">
+                <div class="form-group">
+
+                    <input type="password" appConfirmEqualValidator="password" style="width: 100%;" name="cpassword" class="form-control" [(ngModel)]="conpassword" #cpassword="ngModel" placeholder="Confirm Password * " required [class.is-invalid]="cpassword.invalid && cpassword.touched">
+                    <div *ngIf="cpassword.value!=password.value && (cpassword.invalid && cpassword.touched)">
+                        <small class="text-danger" *ngIf="cpassword.errors.required">Confirm password is required field</small>
+                        <small class="text-danger" *ngIf="cpassword.touched && cpassword.errors?.notEqual && !cpassword.errors?.required">Password and Confirm Password must be same</small>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="form-group mt-3 ml-5 mr-5">
+                <input type="text" class="form-control" placeholder="Email id *" name="username" [(ngModel)]="patient.username" value="" #username="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [class.is-invalid]="username.invalid && username.touched" required>
+                <small class="text-danger" [class.d-none]="username.valid || username.untouched">EmailId is Required </small>
+            </div>
+            <div class="form-group ml-5 mr-5">
+                <input type="number" pattern="[1-9]{1}[0-9]{9}" name="aadhar" [(ngModel)]="patient.aadharno" #aadhar="ngModel" class="form-control " placeholder="Your Aadhar no* " required [class.is-invalid]="aadhar.invalid && aadhar.touched" />
+                <div *ngIf="aadhar.errors && (aadhar.invalid && aadhar.touched)">
+                    <small class="text-danger" *ngIf="aadhar.errors.required">Aadhar No is required field</small>
+                    <small class="text-danger" *ngIf="aadhar.errors.pattern">Enter the valid Aadhar No Number</small>
+                </div>
+            </div>
+
+            <div class="form-group mt-3 ml-5 mr-5">
+
+                <div class="form-group">
+                    <input type="number" minlength="6" maxlength="6" style="width: 100%;" class="form-control" placeholder="Pincode *" name="pincode" [(ngModel)]="patient.pincode" value="" #pincode="ngModel" [class.is-invalid]="pincode.invalid && pincode.touched" required>
+                    <small class="text-danger" [class.d-none]="pincode.valid || pincode.untouched">Pincode is required field</small>
+                </div>
+
+            </div>
+            <div class="form-group mt-3 ml-5 mr-5">
+                <textarea rows="2 " cols="50 " class="form-control " placeholder="Address" [(ngModel)]="patient.address" #address="ngModel" name="address" required [class.is-invalid]="address.invalid && address.touched"></textarea>
+                <small class="text-danger" [class.d-none]="address.valid || address.untouched">Address is required Field</small>
+            </div>
+            <div class="form-group mt-3 ml-5 mr-5">
+                <input type="submit" [disabled]="RegisterForm.form.invalid" class="btn btn-block btn-login" mat-raised-button color="primary" style=" color: white; background-color:rgb(255, 53, 87);" value="Register " />
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+
+
+
+
+        </form>
+    </div>
+</div>

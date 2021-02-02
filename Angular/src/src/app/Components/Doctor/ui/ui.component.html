@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="container mt5" style="width: 70%;">
+        <div class="mt-5">
+            <div class="pt-5" style="text-align: center;">
+                <h4>Today's Appointment</h4>
+                <div class="p-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>S.No</td>
+                                <td>Patient Slot</td>
+                                <td>Patient Disease</td>
+                                <td>View Patient</td>
+                            </tr>
+                            <tr *ngFor="let item of data ; let i=index;">
+                                <td>{{i+1}}</td>
+                                <td>{{item.slot}}</td>
+                                <td>{{item.problem}}</td>
+                                <td><button (click)="viewPatient(item.p_id)" class="form-control">View Patient</button></td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

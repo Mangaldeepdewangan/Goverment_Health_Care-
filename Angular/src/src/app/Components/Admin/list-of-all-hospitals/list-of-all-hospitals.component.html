@@ -1,0 +1,40 @@
+<div class="container">
+    <div style="text-align: center;">
+        <h3>All Hospital List</h3>
+    </div>
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th><b>S.No</b></th>
+                <th><b>Hospital Name</b></th>
+                <th><b>City</b></th>
+                <th><b>Address</b></th>
+                <th><b>Rating</b></th>
+                <th><b>View Doctors</b></th>
+                <th><b>View Review</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of AllHospital; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{item.hospital_name}}</td>
+                <td>{{item.city}}</td>
+                <td>{{item.address}}</td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-outline-info" (click)="getRating(item.hospital_name , item.id )">View Rating</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-sm btn-outline-primary" (click)="getAllDoc(item.id ,item.hospital_name)">View Doctors <img src="../../../../assets/doctorLogin.png" style="width: 20px; height: 20px;" alt=""></button>
+                </td>
+                <td>
+                    <button type="button" sty class="btn btn-sm btn-outline-success" (click)=" getAllReview(item.id ,item.hospital_name)">View Review</button>
+
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <br>
+    <div style="text-align: center;">
+        <h3>All Doctors List of {{hosName}} </h3>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Doctor Name</th>
+                <th>Joiing Date</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>View Doctor</th>
+                <th>View Rating</th>
+                <th>View Review</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of AllDoc; let i=index">
+                <td>{{i+1}}</td>
+                <td>{{item.fname}}&nbsp;{{item.lname}}</td>
+                <td>{{item.joindate.substring(0,10)}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.mobile}}</td>
+                <td><button type="button" class="btn btn-sm btn-outline-primary" (click)="getAllDoc(item.doc_id)">View Doctors</button></td>
+                <td><button type="button" class="btn btn-sm btn-outline-success" (click)="getRating(item.fname ,item.lname)">View Rating</button></td>
+                <td><button type="button" class="btn btn-sm btn-outline-info" (click)="getReview(item.doc_id , item.fname ,item.lname )">View Reviews</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>

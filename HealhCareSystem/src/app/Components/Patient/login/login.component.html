@@ -1,0 +1,34 @@
+<div class="container">
+    <br>
+    <br>
+    <div class="mt4">
+        <div style="text-align: center;">
+            <img src="https://img.icons8.com/plasticine/150/000000/user-male.png" />
+        </div>
+        <div style="text-align: center;">
+            <small class="text-danger">{{error}}</small>
+        </div>
+        <div style="text-align: center;">
+            <form class="example-form" (ngSubmit)="onSubmit()">
+                <mat-form-field class="example-full-width" style="width: 65%;">
+                    <mat-label>Username</mat-label>
+                    <input style="width: 100%;" matInput placeholder="Please Enter Username" [(ngModel)]="user.username" name="uname">
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width" style="width: 65%;">
+                    <mat-label>Password</mat-label>
+                    <input type="password" style="width: 100%;" matInput placeholder="Password" [(ngModel)]="user.password" name="password">
+                </mat-form-field>
+                <br>
+                <button mat-raised-button color="primary" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</button>&nbsp;&nbsp;
+                <button mat-raised-button color="accent" (click)="reset()">Reset</button>
+            </form>
+            <br>
+            <br>
+            <button mat-raised-button style="width:40%;" color="primary" [routerLink]="['/register']" routerLinkActive="router-link-active">Register</button>
+        </div>
+    </div>
+
+</div>
+<div>
+</div>

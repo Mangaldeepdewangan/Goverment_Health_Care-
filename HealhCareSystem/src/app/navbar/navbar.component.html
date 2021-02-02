@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <span><a class="ho" mat-icon-button routerLink=""  > <img src="https://img.icons8.com/plasticine/50/000000/health-book.png"/>Gov Healthcare Appointment </a></span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="accent" [matMenuTriggerFor]="menu"><img src="https://img.icons8.com/cotton/30/000000/user-male.png"/>Mangaldeep</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Profile</button>
+        <button mat-menu-item>All Appointment</button>
+        <button mat-menu-item>Feedback</button>
+        <button mat-menu-item>Logout</button>
+    </mat-menu>
+    <button mat-raised-button color="accent" *ngIf="false" [matMenuTriggerFor]="menu"><img src="https://img.icons8.com/cotton/30/000000/user-male.png"/>Admin</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Profile</button>
+        <button mat-menu-item>All Appointment</button>
+        <button mat-menu-item>Feedback</button>
+        <button mat-menu-item>Logout</button>
+    </mat-menu>
+    <button mat-raised-button color="accent" [matMenuTriggerFor]="menu"><img src="https://img.icons8.com/cotton/30/000000/user-male.png"/>Hospital</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>Profile</button>
+        <button mat-menu-item>All Appointment</button>
+        <button mat-menu-item>Feedback</button>
+        <button mat-menu-item>Logout</button>
+    </mat-menu>
+</mat-toolbar>

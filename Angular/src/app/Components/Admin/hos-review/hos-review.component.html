@@ -1,0 +1,23 @@
+<div class="container">
+    <br>
+    <div style="text-align: center;">
+        <h3>All Review of {{HosName}}</h3>
+    </div>
+    <br>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th colspan="1"><b>S.No.</b></th>
+                <th><b>Reviews</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of AllReview; let i=index;">
+                <td colspan="1">{{i+1}}</td>
+                <td>{{item.campus}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
